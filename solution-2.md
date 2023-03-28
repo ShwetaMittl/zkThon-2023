@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
-import "@openzeppelin/contracts@4.8.2/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts@4.8.2/token/ERC20/extensions/ERC20Burnable.sol";
-import "@openzeppelin/contracts@4.8.2/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol";
 
-contract Samyak is ERC20, ERC20Burnable, Ownable {
-    constructor() ERC20("Samyak", "SAM") {
+contract Shweta is ERC20, Ownable, ERC20Permit {
+    constructor() ERC20("Shweta", "MTL") ERC20Permit("Shweta") {
         _mint(msg.sender, 10000 * 10 ** decimals());
     }
 
@@ -14,3 +14,4 @@ contract Samyak is ERC20, ERC20Burnable, Ownable {
         _mint(to, amount);
     }
 }
+
